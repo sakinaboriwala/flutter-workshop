@@ -27,7 +27,12 @@ class _MovieCardsState extends State<MovieCards> {
         appBar: AppBar(
           title: Text('Movies'),
         ),
-        body: Column(children: [movieCard()]));
+        body: ListView.builder(
+          itemCount: 3,
+          itemBuilder: (BuildContext context, int index) {
+            return movieCard();
+          },
+        ));
   }
 
   Widget movieCard() {
@@ -42,7 +47,9 @@ class _MovieCardsState extends State<MovieCards> {
             style: TextStyle(
                 fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Image.asset('images/avengers.jpg'),
         ],
       ),
