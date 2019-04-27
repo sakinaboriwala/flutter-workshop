@@ -6,33 +6,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
-      title: 'Movie Cards',
-      home: MovieCards(),
-    );
-  }
-}
-
-class MovieCards extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _MovieCardsState();
-  }
-}
-
-class _MovieCardsState extends State<MovieCards> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Movies'),
-        ),
-        body: ListView.builder(
-          itemCount: 3,
-          itemBuilder: (BuildContext context, int index) {
-            return movieCard();
-          },
-        ));
+        theme: ThemeData.dark(),
+        title: 'Movie Cards',
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Movies'),
+            ),
+            body: ListView.builder(
+              itemCount: 3,
+              itemBuilder: (BuildContext context, int index) {
+                return movieCard();
+              },
+            )));
   }
 
   Widget movieCard() {
